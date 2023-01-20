@@ -8,7 +8,6 @@ const Navigation = (props) => {
   return (
     <AuthContext.Consumer> 
       {(ctx)=>{
-        console.log(ctx);
         return  <nav className={classes.nav}>
         <ul>
           {ctx.isLoggedIn && (
@@ -23,7 +22,7 @@ const Navigation = (props) => {
           )}
           {ctx.isLoggedIn && (
             <li>
-              <button onClick={props.onLogout}>Logout</button>
+              <button onClick={ctx.onLogout}>Logout</button>
             </li>
           )}
         </ul>
